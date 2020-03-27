@@ -1,9 +1,15 @@
-//TODO
+import { Game } from "./class/game";
 
-// import { Partie } from "./classes/partie";
+const game : Game = new Game(5,4);
 
-// const partie : Partie = new Partie(5,4);
+game.init();
+game.start();
+game.show_winner();
 
-// partie.initialiser();
-// partie.lancer();
-// partie.afficher_gagnant();
+
+// Tests
+// import { Dice } from "./class/dice";
+
+// const dice: Dice = new Dice();
+// dice.throw();
+// console.log(dice.get_value());

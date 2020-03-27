@@ -12,6 +12,6 @@ export class Dice {
 
 
     public throw = () => {
-        //define this._value => nb generation (1-6)
+        this._value = Math.floor(Math.random() * 6) + 1;
     }
 }
