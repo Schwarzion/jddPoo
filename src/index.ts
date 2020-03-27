@@ -1,9 +1,7 @@
-//TODO
+import { Game } from "./class/game";
 
-// import { Partie } from "./classes/partie";
+const game : Game = new Game(5, 1);
 
-// const partie : Partie = new Partie(5,4);
-
-// partie.initialiser();
-// partie.lancer();
-// partie.afficher_gagnant();
+game.init(); //Initialize the game
+game.start(); //Start the game
+game.show_winner(); //Display winner
