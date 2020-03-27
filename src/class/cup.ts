@@ -4,34 +4,72 @@ export class Cup {
     _value: number;
     _dices: Dice[] = [];
 
+    /**
+     * Create a cup
+     * 
+     * @param diceNb 
+     * 
+     * @return void
+     */
     constructor(diceNb: number) {
-        this._value = diceNb;
+        this._value = 0;
+        this.set_dices(diceNb);
     }
 
-    private setDices = (diceNb: number) => {
+    /**
+    * Generate number of dice needed to play, 
+    * Push it in dice array 
+    * 
+    * @param diceNb
+    * 
+    * @return void
+    */
+    private set_dices = (diceNb: number) => {
         for (diceNb; diceNb > 0; diceNb--) {
             this._dices.push(new Dice());
         }
     }
 
+    /**
+    * Return cup value
+    *
+    * @return number
+    */
     public get_value = () => {
         return this._value;
     }
 
+    /**
+    * Set cup value
+    *
+    * @param value
+    * 
+    * @return void
+    */
     public set_value = (value: number) => {
         this._value = value;
     }
 
+    /**
+    * Throw the cup
+    *
+    * @return void
+    */
     public throw = () => {
-        //loop in dice array
-        //Use dice.throw
-        //get values
-        // this.set_value();
-        // console.log(this._dices);
-        // return (this._value);
+        //For all dices in cup
+        for (let dice of this._dices) {
+            dice.throw(); //Player throwing cup
+            this._value += dice.get_value();
+        }
+        this.display_score();
     }
 
+    /**
+    * Display player score in console
+    *
+    * @return void
+    */
     public display_score = () => {
-        return this._dices[this._dices.length - 1].get_value();
+        console.log(`Turn score: ${this._value}`)
     }
 }
