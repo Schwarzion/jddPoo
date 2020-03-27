@@ -22,3 +22,8 @@ npm install
 ```bash
 npm start
 ```
+
+
+## About the game
+
+This is a simple dice game

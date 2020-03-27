@@ -27,6 +27,8 @@ export class Game {
     init = () => {
         this._players.push(new Player('Michel'));
         this._players.push(new Player('Bobby'));
+        this._players.push(new Player('Chris'));
+        this._players.push(new Player('Karl'));
     }
 
 
@@ -46,12 +48,19 @@ export class Game {
     }
 
     /**
-    * Display player highest score
+    * Display winner
     * 
     * @return void
     */
     show_winner = () => {
-        const winner = this._players[0].get_score() > this._players[1].get_score() ? this._players[0] : this._players[1]
-        console.log(`${winner.get_name()} wins with ${winner.get_score()} points`);
+        let score = 0;
+        let winner;
+        for (let player of this._players) {
+            let playerScore = player.get_score();
+            winner = playerScore > score ? player : winner;
+
+        }
+        if (winner != undefined)
+            console.log(`${winner.get_name()} wins with ${winner.get_score()} points`);
     }
 }
