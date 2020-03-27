@@ -54,13 +54,20 @@ export class Game {
     */
     show_winner = () => {
         let score = 0;
-        let winner;
+        let winner = this._players[0];
+        let first: boolean = true;
         for (let player of this._players) {
-            let playerScore = player.get_score();
-            winner = playerScore > score ? player : winner;
+            console.log(`${player.get_name()} : ${player.get_score()} points`);
+            if (first) {
+                score = player.get_score();
+                first = false;
+            }
+            else {
+                let playerScore = player.get_score();
+                winner = playerScore > score ? player : winner;
+            }
 
         }
-        if (winner != undefined)
-            console.log(`${winner.get_name()} wins with ${winner.get_score()} points`);
+        console.log(`${winner.get_name()} wins with ${winner.get_score()} points`);
     }
 }
