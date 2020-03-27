@@ -14,7 +14,7 @@ export class Dice {
     *
     * @return number
     */
-    public get_value = () => {
+    get_value = () => {
         return this._value;
     }
 
@@ -23,7 +23,7 @@ export class Dice {
     *
     * @return void
     */
-    public throw = () => {
+    throw = () => {
         this._value = Math.floor(Math.random() * 6) + 1;
     }
 }

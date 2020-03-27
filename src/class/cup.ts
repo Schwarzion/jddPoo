@@ -24,7 +24,7 @@ export class Cup {
     * 
     * @return void
     */
-    private set_dices = (diceNb: number) => {
+    set_dices = (diceNb: number) => {
         for (diceNb; diceNb > 0; diceNb--) {
             this._dices.push(new Dice());
         }
@@ -35,7 +35,7 @@ export class Cup {
     *
     * @return number
     */
-    public get_value = () => {
+    get_value = () => {
         return this._value;
     }
 
@@ -46,7 +46,7 @@ export class Cup {
     * 
     * @return void
     */
-    public set_value = (value: number) => {
+    set_value = (value: number) => {
         this._value = value;
     }
 
@@ -55,7 +55,7 @@ export class Cup {
     *
     * @return void
     */
-    public throw = () => {
+    throw = () => {
         //For all dices in cup
         for (let dice of this._dices) {
             dice.throw(); //Player throwing cup
@@ -69,7 +69,7 @@ export class Cup {
     *
     * @return void
     */
-    public display_score = () => {
+    display_score = () => {
         console.log(`Turn score: ${this._value}`)
     }
 }

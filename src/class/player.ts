@@ -48,10 +48,10 @@ export class Player {
     }
 
     /**
-     * Display player score in console
-     *
-     * @return void
-     */
+    * Display player score in console
+    *
+    * @return void
+    */
     display_score = () => {
         console.log(`Total score: ${this._score}\n`);
     }
